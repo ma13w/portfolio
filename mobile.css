@@ -1,0 +1,72 @@
+:root{
+    --black-color: #141414;
+    --white-color: #F0F0F0;
+    --blue-color: #14DFA1;
+
+    --mb-large-large-text: 40px;
+    --mb-large-text: 38px;
+    --mb-medium-large-text: 26px;
+    --mb-medium-text: 20px;
+    --mb-medium-small-text: 18px;
+    --mb-small-text: 16px;
+
+    --font-fira-sans: "Fira Sans", sans-serif;
+}
+
+@media (max-width: 992px) {
+    .left-navbar{
+        display: none;
+    }
+    .main-text{
+        padding: 0px;
+        padding-top: 20px;
+        font-size: var(--mb-large-large-text);
+        margin-right: -30px;
+    }
+
+    .bottom-side{
+        width: 90%;
+    }
+    .page-title{
+        width: 95%;
+    }
+
+    .page-container{
+        justify-content: center;
+    }
+    .inside-circle{
+        width: 50px;
+        height: 50px;
+    }
+    .outside-circle{
+        width: 80px;
+        height: 80px;
+    }
+
+    .contact-form{
+        padding: 35px !important;
+        width: calc(100% - 70px) !important;
+    }
+    .contact-form span{
+        font-size: calc(var(--mb-small-text-text) - 2px);
+    }
+    .contact-form input{
+        width: calc(100% - 10px) !important;
+        max-width: 999px;
+        font-size: var(--mb-small-text) !important;
+    }
+    .contact-form textarea{
+        width: calc(95% - 10px) !important;
+        max-width: 999px;
+        font-size: var(--mb-small-text) !important;
+    }
+    .type-selector{
+        font-size: var(--mb-medium-large-text);
+    }
+    .contact-title{
+        font-size: var(--mb-medium-large-text);
+    }
+    .contact-form button{
+        padding: 0;
+    }
+}

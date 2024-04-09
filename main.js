@@ -29,6 +29,12 @@ document.addEventListener('scroll', function() {
             newlineDiv.className = "main-text";
             newlineDiv.id = "main-text-nav";
             newlineDiv.textContent = "Mattew";
+            newlineDiv.addEventListener("click", function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
 
             const navItems = document.querySelectorAll('.nav-item');
             const middleIndex = Math.ceil(navItems.length / 2);
@@ -66,36 +72,16 @@ document.addEventListener('DOMContentLoaded', function(){
     const circles = document.querySelectorAll('.outside-circle');
     circles.forEach(circle => {
         colorExternalCircle(circle);
+
+        circle.addEventListener('mouseenter', function() {
+            circle.style.backgroundColor = 'transparent';
+        });
+
+        circle.addEventListener('mouseleave', function() {
+            colorExternalCircle(circle);
+        });
     });
 });
-
-
-/* Toggle between contact forms */
-function toggleContact(elem) {
-    elem.classList.add('selector-active');
-    document.querySelectorAll('.selector-type').forEach(selector => {
-        if (selector != elem) selector.classList.remove('selector-active');
-    });
-
-    const messageForm = document.getElementById('message-form');
-    const commentForm = document.getElementById('comment-form');
-
-    if (elem.id == "msg") {
-        messageForm.style.opacity = "1";
-        messageForm.style.display = "block";
-        commentForm.style.opacity = "0";
-        commentForm.style.display = "none";
-    } else if (elem.id == "cmt") {
-        commentForm.style.opacity = "1";
-        commentForm.style.display = "block";
-        messageForm.style.opacity = "0";
-        messageForm.style.display = "none";
-    }
-
-    // Add transition ease
-    messageForm.style.transition = "opacity 0.5s ease";
-    commentForm.style.transition = "opacity 0.5s ease";
-}
 
 /* who-i-am section -> scroll scpace ontop */ 
 document.addEventListener("DOMContentLoaded", function() {
@@ -113,26 +99,48 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
 /* Scroll Reveal Animation */
-const srtop = ScrollReveal({
-    origin: 'left',
-    distance: '80px',
-    duration: 800,
-    delay: 150,
-    easing: 'ease',
-    reset: true,
-    viewOffset: { top: 100, right: 0, bottom: 0, left: 0 }
-});
-document.addEventListener("DOMContentLoaded", function() {
-    srtop.reveal('.page-title');
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const staticContactHeight = this.querySelector('.contact-form').offsetHeight;
-    this.querySelectorAll('.contact-form').forEach(elem => {
-        elem.style.height = staticContactHeight - 100 + "px";
+var settings;
+if(isPhone()){
+    settings = ScrollReveal({
+        origin: 'left',
+        distance: '80px',
+        duration: 800,
+        delay: 150,
+        easing: 'ease',
+        reset: true,
     });
-    console.log(staticContactHeight);
+}else{
+    settings = ScrollReveal({
+        origin: 'left',
+        distance: '80px',
+        duration: 800,
+        delay: 150,
+        easing: 'ease',
+        reset: true,
+        viewOffset: { top: 100, right: 0, bottom: 0, left: 0 }
+    });
+}
+document.addEventListener("DOMContentLoaded", function() {
+    settings.reveal('.page-title');
+    settings.reveal('.contact-form > div, .contact-form > span, .contact-form > input, .contact-form > textarea, .contact-form > button', {
+        origin: 'top',
+        distance: '30px',
+        duration: 500,
+    });
+});
+
+/* some fix for mobile view */
+function isPhone() {
+    return window.innerWidth < 992;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    if(isPhone()){
+        document.querySelectorAll("#message-form > span").forEach(elem => {
+            if (elem.textContent.includes(".")) {
+                elem.style.display = "none";
+            }
+        });
+    }
 });
