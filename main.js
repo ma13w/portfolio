@@ -74,10 +74,12 @@ document.addEventListener('DOMContentLoaded', function(){
         colorExternalCircle(circle);
 
         circle.addEventListener('mouseenter', function() {
-            circle.style.backgroundColor = 'transparent';
+            // circle.style.backgroundColor = 'transparent';
+            circle.style.borderRadius = '40px';
         });
 
         circle.addEventListener('mouseleave', function() {
+            circle.style.borderRadius = '100px';
             colorExternalCircle(circle);
         });
     });
@@ -108,7 +110,7 @@ if(isPhone()){
         duration: 800,
         delay: 150,
         easing: 'ease',
-        reset: true,
+        reset: false,
     });
 }else{
     settings = ScrollReveal({
@@ -117,7 +119,7 @@ if(isPhone()){
         duration: 800,
         delay: 150,
         easing: 'ease',
-        reset: true,
+        reset: false,
         viewOffset: { top: 100, right: 0, bottom: 0, left: 0 }
     });
 }
@@ -144,3 +146,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+
+/* toggle theme */
+function toggleTheme() {
+    if(document.querySelector('link[href=""]')) {
+        document.getElementById('slider').checked = true;
+        document.querySelector('link[href=""]').href = 'dark.css';
+    }else if(document.querySelector('link[href="dark.css"]')){
+        document.getElementById('slider').checked = false;
+        document.querySelector('link[href="dark.css"]').href = '';
+    }
+}

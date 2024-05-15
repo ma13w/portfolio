@@ -1,0 +1,19 @@
+body{
+    background-color: #282828;
+}
+
+.page-title{
+    background-color: transparent;
+    border: 1px solid var(--white-color);
+    border-radius: 5px;
+    color: var(--blue-color);
+}
+.page-subtitle{
+    color: var(--white-color);
+}
+.page-text{
+    color: var(--white-color);
+}
+.page-text a{
+    color: var(--white-color);
+}
