@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mattew</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css">
-    <link rel="stylesheet" href=""> <!-- take it empty, will be add the dark theme -->
+    <link rel="stylesheet" href="dark.css">
     
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
 </head>
 <body>
-    <div class="slider-container">
-        <label id="switch" class="switch">
-            <input type="checkbox" onchange="toggleTheme()" id="slider">
-            <span class="slider round"></span>
-        </label>
-    </div>
     <div class="left-navbar white-shadow-effect">
         <div class="nav-list">
-            <div class="nav-item"><a href="#who-i-am">Who I am</a></div>
+            <div class="nav-item"><a href="#who-i-am">Who am I</a></div>
             <div class="nav-item"><a href="#tech-stack">Tech Stack</a></div>
             <div class="nav-item"><a href="#projects">Projects</a></div>
             <div class="nav-item"><a href="#contact">Contact Me</a></div>
         </div>
+    </div>
+
+    <div class="slider-container">
+        <label id="switch" class="switch">
+            <input type="checkbox" onchange="toggleTheme()" id="slider" checked>
+            <span class="slider round"></span>
+        </label>
     </div>
 
     <div class="first-page main-page">
@@ -32,7 +33,7 @@
             <div class="main-dot">
                 <div class="single-dot"></div>
                 <div class="single-dot"></div>
-                <div class="single-dot"></div>
+                <div class="single-dot"></div>  
             </div>
             <div class="main-text" id="init-title">Mattew</div>
         </div>
@@ -40,9 +41,9 @@
 
     <div class="second-page main-page" id="who-i-am">
         <div class="bottom-side who-i-am">
-            <div class="page-title">WHO I AM</div>
+            <div class="page-title">WHO AM I</div>
             <div class="page-text font-medium">
-                Hi, I'm <span>Matteo</span>, now I'm studying computer science in Milan. I am currently pursuing my passion for <span>web development</span> and on <span>cybersecurity</span>. My passion for programming has led me to explore the world of <span>frontend</span> and <span>backend</span> web development.
+                Hi, I'm <strong>Matteo</strong>, now I'm studying computer science in Milan. I am currently pursuing my passion for <strong>web development</strong> and on <strong>cybersecurity</strong>. My passion for programming has led me to explore the world of <strong>frontend</strong> and <strong>backend</strong> web development.
             </div>
         </div>
     </div>
@@ -80,9 +81,9 @@
                     <div class="outside-circle" data-percent="80">
                         <div class="inside-circle" id="py"></div>
                     </div>
-                    <div class="outside-circle" data-percent="80">
+                    <!-- <div class="outside-circle" data-percent="80">
                         <div class="inside-circle" id="git"></div>
-                    </div>
+                    </div> -->
                     <div class="outside-circle" data-percent="80">
                         <div class="inside-circle" id="frb"></div>
                     </div>
@@ -98,20 +99,39 @@
         <div class="bottom-side">
             <div class="project-section">
                 <div class="page-title" style="margin: 0;">PROJECTS</div>
+                <!-- ITSOS CTF -->
+                <div class="project" id="Itsos-Ctf">
+                    <div class="page-subtitle">ITSOS CTF</div>
+                    <div class="page-text font-regular">
+                        Jacopo and I <strong>developed challenges</strong> for a school CTF project. I was responsible for creating most of the challenges on the platform. Out of curiosity, we tried to add some AI challenges, where the AI knows the flag and the player needs to extract the flag by interacting with the AI using the <strong>ChatGPT API</strong>.
+                        <br>
+                        For <strong>cryptographic challenges</strong>, I researched <strong>custom ciphers</strong> and basic <strong>hash functions</strong>. Jacopo hosted various websites, with most being on the main domain, while the AI challenges were hosted on a separate domain with a Python backend. My challenges were hosted on the cali.x0k.it subdomain.
+                        <br>
+                        Competitions were managed through a <strong>CTFd portal</strong>, covering categories like <strong>web exploitation</strong>, <strong>cryptography</strong>, <strong>network security</strong>, <strong>binary exploitation</strong>, and more.
+                        </div>
+                    <div class="page-text font-regular">
+                        Currently online <a href="https://comp-training.shish.cat/" target="_blank">here</a>
+                    </div>
+                    <div class="project-techstack">
+                        <div class="techstack-item">PHP</div>
+                        <div class="techstack-item">JavaScript</div>
+                        <div class="techstack-item">Python</div>
+                        <div class="techstack-item">HTML</div>
+                        <div class="techstack-item">CSS</div>
+                    </div>
+                </div>
+                <!-- Sharky -->
                 <div class="project" id="Sharky">
                     <div class="page-subtitle">Sharky</div>
                     <div class="page-text font-regular">
                         I designed and developed a dynamic <strong>website to manage the storefront and sales of a clothing brand</strong>. 
                         As lead developer I managed the <strong>frontend development</strong>, working meticulously on the <strong>user experience</strong>, and implementing the <strong>authentication service</strong> for customer accounts for order tracking. Leveraging the robust functionality of Shopify and its proprietary ".liquid" language, I optimized the website for efficiency and functionality. In addition, I <strong>managed the hosting</strong> of the site and created customized emails for employees.    
                     </div>
-                </div>
-                <div class="project" id="Itsos-Ctf">
-                    <div class="page-subtitle">ITSOS CTF</div>
-                    <div class="page-text font-regular">
-                        I <strong>developed challenges</strong> using <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>Python</strong> and <strong>PHP</strong> for server-side validation, along with <strong>custom ciphers</strong> and <strong>hash functions</strong> for cryptographic tasks. OSINT challenges were also created to enhance players' internet navigation skills. Hosting various websites and challenges, most were on the main domain, while AI challenges were on a separate domain with a Python backend. My challenges were on the cali.x0k.it subdomain, running on Jacopo's home server, and reverse-proxied through his node. Competitions were managed through a <strong>CTFd portal</strong>, covering categories like <strong>web exploitation</strong>, <strong>cryptography</strong>, <strong>network security</strong>, and more. We also established a secondary portal for archiving past challenges and to get our calssmates trained. Overall, we received <strong>1000 flag submissions</strong> from <strong>60 users</strong> across <strong>75 CTFs</strong>.
-                    </div>
-                    <div class="page-text font-regular">
-                        Currently online <a href="https://comp-training.shish.cat/" target="_blank">here</a>
+                    <div class="project-techstack">
+                        <div class="techstack-item">Shopify</div>
+                        <div class="techstack-item">Liquid</div>
+                        <div class="techstack-item">HTML</div>
+                        <div class="techstack-item">CSS</div>
                     </div>
                 </div>
             </div>
@@ -122,6 +142,12 @@
         <div class="bottom-side">
             <div class="contact-me">
                 <div class="page-title">CONTACT ME</div>
+                <div class="contact-container">
+                    <div class="contact-list-selector">
+                        <div class="contact-item">Email: calimatteo.official@gmail.com</div>
+                        <div class="contact-item"><a href="https://linkedin.com/in/matteo-cali" target="_blank">Linkedin</a></div>
+                    </div>
+                </div>
                 <div class="contact-container">
                     <div class="contact-selector">
                         <div 
@@ -156,7 +182,9 @@
                         <div class="submit-form">
                             <button type="submit">
                                 <div>Send</div>
-                                <div>-></div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#141414"><path d="M646-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h446L532-634q-12-12-11.5-28t11.5-28q12-12 28.5-12.5T589-691l183 183q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L589-269q-12 12-28.5 11.5T532-270q-11-12-11.5-28t11.5-28l114-114Z"/></svg>
+                                </div>
                             </button>
                         </div>
                     </form>
