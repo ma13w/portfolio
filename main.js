@@ -158,3 +158,13 @@ function toggleTheme() {
         document.querySelector('link[href="dark.css"]').href = '';
     }
 }
+
+
+/* contact form */
+document.querySelector('.submit-button').addEventListener('mouseenter', () => {
+    document.querySelector('.submit-button').classList.add('hover');
+});
+
+document.querySelector('.submit-button').addEventListener('mouseleave', () => {
+    document.querySelector('.submit-button').classList.remove('hover');
+});

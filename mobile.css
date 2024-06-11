@@ -18,6 +18,8 @@
         position: absolute;
         align-items: center;
         margin-left: 0;
+        margin-top: 10px;
+        left: 50%;
     }
     .first-page{
         height: 40vh;
